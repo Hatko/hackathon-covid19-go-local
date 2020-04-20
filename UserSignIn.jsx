@@ -6,7 +6,7 @@ import { TextInput } from "react-native-gesture-handler";
 
 export const UserSignIn = () => {
   const { navigate } = useNavigation();
-  state = { email: " ", name: " ", phone: " " };
+  // state = { email: " ", name: " ", phone: " " };
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -23,7 +23,6 @@ export const UserSignIn = () => {
           width: 300,
         }}
         keyboardType="email-address"
-        onChangeText={(value) => this.setState({ email: value })}
       />
       <Text>Name:</Text>
       <TextInput
@@ -35,9 +34,7 @@ export const UserSignIn = () => {
           borderColor: "#DEDEDE",
           borderRadius: 7,
           width: 300,
-        }}
-        onChangeText={(value) => this.setState({ name: value })}
-      />
+        }} />
       <Text>Phone:</Text>
       <TextInput
         placeholder="e.g. 939XXXXX"
@@ -50,7 +47,6 @@ export const UserSignIn = () => {
           borderRadius: 7,
           width: 300,
         }}
-        onChangeText={(value) => this.setState({ phone: value })}
       />
       <Button title="Sign up"></Button>
     </View>
