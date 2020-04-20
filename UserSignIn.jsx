@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text } from "react-native";
 import { Button } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
@@ -6,9 +6,7 @@ import { TextInput } from "react-native-gesture-handler";
 
 export const UserSignIn = () => {
   const { navigate } = useNavigation();
-  // const [email, setEmail] = useState(' ')
-  // const [name, setName] = useState(' ')
-  // const [phone, setPhone] = useState('')
+  state = { email: " ", name: " ", phone: " " };
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -25,7 +23,7 @@ export const UserSignIn = () => {
           width: 300,
         }}
         keyboardType="email-address"
-        onChangeText={(value) => setEmail(value)}
+        onChangeText={(value) => this.setState({ email: value })}
       />
       <Text>Name:</Text>
       <TextInput
@@ -38,7 +36,7 @@ export const UserSignIn = () => {
           borderRadius: 7,
           width: 300,
         }}
-        onChangeText={(value) => setName(value)}
+        onChangeText={(value) => this.setState({ name: value })}
       />
       <Text>Phone:</Text>
       <TextInput
@@ -52,9 +50,8 @@ export const UserSignIn = () => {
           borderRadius: 7,
           width: 300,
         }}
-        onChangeText={(value) => setPhone(value)}
+        onChangeText={(value) => this.setState({ phone: value })}
       />
-
       <Button title="Sign up"></Button>
     </View>
   );
