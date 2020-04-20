@@ -1,16 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, Dimensions } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import { Button } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
 import * as Location from 'expo-location';
-import { Icon } from 'react-native-elements'
+import { Icon, Button } from 'react-native-elements'
 
 const shops = [
   {
     coordinate: {
       latitude: 55.6855,
       longitude: 12.5971,
+    },
+    icon: <Icon
+      raised
+      name='music'
+      type='font-awesome'
+      color='blue'
+    />
+  },
+  {
+    coordinate: {
+      latitude: 55.6800,
+      longitude: 12.5800,
     },
     icon: <Icon
       raised
@@ -68,7 +79,7 @@ export const Map = () => {
         setLocation(currentLocation.coords);
 
         if (mapRef && mapIsReady) {
-          mapRef.current?.animateToRegion({ ...currentLocation, latitudeDelta: 0.02, longitudeDelta: 0.02 })
+          mapRef.current?.animateToRegion({ ...location, latitudeDelta: 0.1, longitudeDelta: 0.1 })
         }
       } catch (err) {
         console.log(err)
@@ -84,7 +95,7 @@ export const Map = () => {
   }
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}>
       <MapView
         onLayout={() => setMapIsReady(true)}
         ref={mapRef}
@@ -108,8 +119,15 @@ export const Map = () => {
             type='font-awesome'
             color='#f50'
           />
-        </Marker >
+        </Marker>
       </MapView>
+      <Button
+        style={{ position: 'absolute', bottom: 130, alignSelf: 'center' }}
+        title={'Support all in the area'}
+        onPress={() => {
+          navigate('Donation')
+        }}
+      />
     </View>
   );
 }
