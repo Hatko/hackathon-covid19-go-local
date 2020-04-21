@@ -3,7 +3,7 @@ import { View, Text, Dimensions } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
 import * as Location from 'expo-location';
-import { Icon, Button } from 'react-native-elements'
+import { Icon, Button, Image } from 'react-native-elements'
 
 const shops = [
   {
@@ -11,23 +11,27 @@ const shops = [
       latitude: 55.6855,
       longitude: 12.5971,
     },
-    icon: <Icon
-      raised
-      name='music'
-      type='font-awesome'
-      color='blue'
-    />
+    icon: <View style={{ backgroundColor: 'white', width: 50, height: 50, alignItems: 'center', justifyContent: 'center', borderRadius: 25 }}>
+      <Image
+        source={require('./assets/meat.png')}
+        style={{
+          height: 40,
+          width: 40,
+        }}
+      />
+    </View>
   },
   {
     coordinate: {
       latitude: 55.6800,
       longitude: 12.5800,
     },
-    icon: <Icon
-      raised
-      name='music'
-      type='font-awesome'
-      color='blue'
+    icon: <Image
+      source={require('./assets/veggie.png')}
+      style={{
+        height: 50,
+        width: 50,
+      }}
     />
   },
   {
