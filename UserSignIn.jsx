@@ -6,13 +6,13 @@ import { TextInput } from "react-native-gesture-handler";
 
 export const UserSignIn = () => {
   const { navigate } = useNavigation();
-  
+
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Who is our Local Hero?</Text>
       <Text>Email:</Text>
       <TextInput
-        placeholder="e.g. local@golocal.dk" 
+        placeholder="e.g. local@golocal.dk"
         style={{
           borderWidth: 1,
           padding: 8,
@@ -25,7 +25,7 @@ export const UserSignIn = () => {
       />
       <Text>Name:</Text>
       <TextInput
-        placeholder="e.g. John Doe" 
+        placeholder="e.g. John Doe"
         style={{
           borderWidth: 1,
           padding: 8,
@@ -33,7 +33,8 @@ export const UserSignIn = () => {
           borderColor: "#DEDEDE",
           borderRadius: 7,
           width: 300,
-        }} />
+        }}
+      />
       <Text>Phone:</Text>
       <TextInput
         placeholder="e.g. 939XXXXX"
@@ -47,7 +48,7 @@ export const UserSignIn = () => {
           width: 300,
         }}
       />
-      <Button title="Sign up" onPress={() => navigate("CompanyPage")} ></Button>
+      <Button title="Sign up" onPress={() => navigate("CompanyPage")}></Button>
     </View>
   );
 };
