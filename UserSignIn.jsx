@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { TextInput } from "react-native-gesture-handler";
 
 export const UserSignIn = () => {
-  const { navigate, goBack } = useNavigation();
+  const { navigate } = useNavigation();
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -48,7 +48,7 @@ export const UserSignIn = () => {
           width: 300,
         }}
       />
-      <Button title="Sign up" onPress={() => goBack()}></Button>
+      <Button title="Sign up" onPress={() => navigate('Donation')}></Button>
     </View>
   );
 };

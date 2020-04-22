@@ -45,7 +45,7 @@ export const Donation = () => {
             <Button
               containerStyle={{ flex: 1, marginRight: 30 }}
               title={'Support them!'}
-              onPress={() => navigate('UserSignIn')}
+              onPress={() => navigate('Map')}
             />
             <Button
               containerStyle={{ flex: 1 }}

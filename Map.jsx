@@ -129,7 +129,7 @@ export const Map = () => {
         style={{ position: 'absolute', bottom: 130, alignSelf: 'center' }}
         title={'Support all in the area'}
         onPress={() => {
-          navigate('Donation')
+          navigate('UserSignIn')
         }}
       />
     </View>
