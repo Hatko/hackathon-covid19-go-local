@@ -36,12 +36,6 @@ export const HomeScreen = () => {
           onPress={() => {
             navigate('Map')
           }} />
-          <Button
-          title='Sign In'
-          containerStyle={{ width: '100%', paddingHorizontal: 40 }}
-          onPress={() => {
-            navigate('UserSignIn')
-          }} />
       </View>
     </View>
   );
