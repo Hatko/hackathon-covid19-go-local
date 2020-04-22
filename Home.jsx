@@ -23,8 +23,7 @@ export const HomeScreen = () => {
       <View style={{ alignContent: 'flex-end', width: '100%' }}>
         <Button
           title='Business'
-          style={{ marginBottom: 40 }}
-          containerStyle={{ width: '100%', paddingHorizontal: 40 }}
+          containerStyle={{ width: '100%', paddingHorizontal: 40, marginBottom: 40 }}
           onPress={() => {
             navigate('CompanySignIn')
           }}

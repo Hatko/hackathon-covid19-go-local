@@ -126,7 +126,7 @@ export const Map = () => {
         </Marker>
       </MapView>
       <Button
-        style={{ position: 'absolute', bottom: 130, alignSelf: 'center' }}
+        containerStyle={{ position: 'absolute', bottom: 130, alignSelf: 'center' }}
         title={'Support all in the area'}
         onPress={() => {
           navigate('UserSignIn')
