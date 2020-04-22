@@ -41,6 +41,7 @@ export const CompanySignIn = () => {
             alignSelf: "center",
             textAlign: "center",
           }}
+          onPress={() => navigate('CompanyPage')}
         >
           <Text style={{ color: "white" }}>Log In</Text>
         </TouchableOpacity>

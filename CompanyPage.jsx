@@ -55,12 +55,12 @@ export const CompanyPage = () => {
           { user: "Ban                            30 DKK" },
           { user: "Ban                            30 DKK" },
         ]}
-        renderItem={({ item }) => (
+        renderItem={({ item, index }) => (
           <Text style={{ fontSize: 15, color: "gray" }}>
             {item.user}
-            {item.donation}{" "}
           </Text>
         )}
+        keyExtractor={(item, index) => `${item.user}-${index}`}
       />
       <View
         style={{

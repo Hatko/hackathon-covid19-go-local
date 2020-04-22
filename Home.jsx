@@ -34,10 +34,6 @@ export const HomeScreen = () => {
           onPress={() => {
             navigate('Map')
           }} />
-          <Button
-          title={"CompanyPage (Test)"} 
-          containerStyle={{ width: '100%', paddingHorizontal: 40 }}
-          onPress={() => {navigate('CompanyPage')}}  containerStyle={{ width: '100%', paddingHorizontal: 40 }}/>
       </View>
     </View>
   );
