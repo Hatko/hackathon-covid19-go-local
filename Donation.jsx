@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, KeyboardAvoidingView } from 'react-native';
+import { View, KeyboardAvoidingView, Platform } from 'react-native';
 import { Button, Image, Text, Input } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
 

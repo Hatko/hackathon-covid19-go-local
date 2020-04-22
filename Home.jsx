@@ -1,9 +1,8 @@
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Platform } from 'react-native';
 import { Button, Image } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
-import { UserSignIn } from './UserSignIn';
 
 export const HomeScreen = () => {
   const { navigate } = useNavigation();
@@ -34,7 +33,7 @@ export const HomeScreen = () => {
           title='Customer'
           containerStyle={{ width: '100%', paddingHorizontal: 40 }}
           onPress={() => {
-            navigate('Map')
+            navigate(Platform.OS === 'web' ? 'CompaniesList' : 'Map')
           }} />
       </View>
     </View>
