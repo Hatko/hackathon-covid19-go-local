@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, Text, FlatList } from "react-native";
+import { View, Image, Text, FlatList, ViewBase } from "react-native";
 import { Button } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 
@@ -50,15 +50,25 @@ export const CompanyPage = () => {
       <Text style={{ fontSize: 15, color: "gray" }}>Latest donations: </Text>
       <FlatList
         data={[
-          { user: "Ban                            30 DKK" },
-          { user: "Ban                            30 DKK" },
-          { user: "Ban                            30 DKK" },
-          { user: "Ban                            30 DKK" },
+          { user: "Ban", donation: "30 DKK" },
+          { user: "Ban", donation: "30 DKK" },
+          { user: "Ban", donation: "30 DKK" },
+          { user: "Ban", donation: "30 DKK" },
         ]}
         renderItem={({ item, index }) => (
-          <Text style={{ fontSize: 15, color: "gray" }}>
-            {item.user}
-          </Text>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text style={{ marginHorizontal: 40, fontSize: 15, color: "gray" }}>
+              {item.user}
+            </Text>
+            <Text style={{ marginHorizontal: 40, fontSize: 15, color: "gray" }}>
+              {item.donation}
+            </Text>
+          </View>
         )}
         keyExtractor={(item, index) => `${item.user}-${index}`}
       />
@@ -66,25 +76,18 @@ export const CompanyPage = () => {
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
-          margin: 30,
+          margin: 20,
         }}
       >
         <Button
-          style={{ flex: 1, margin: 20 }}
           title={"I need money"}
-          onPress={() => {
-            navigate("CompanySignIn");
-          }}
+          style={{ marginBottom: 40 }}
+          containerStyle={{ width: '60%', paddingHorizontal: 30 }}
         />
         <Button
-          style={{
-            flex: 1,
-            margin: 20,
-          }}
           title={"I got a voucher"}
-          onPress={() => {
-            navigate("UserSignIn");
-          }}
+          style={{ marginBottom: 40 }}
+          containerStyle={{ width: '60%', paddingHorizontal: 30 }}
         />
       </View>
     </View>
