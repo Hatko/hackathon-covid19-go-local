@@ -1,10 +1,12 @@
+
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Button, Image } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
+import { UserSignIn } from './UserSignIn';
 
 export const HomeScreen = () => {
-  const { navigate } = useNavigation()
+  const { navigate } = useNavigation();
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'space-between', paddingVertical: 80 }}>
@@ -34,7 +36,13 @@ export const HomeScreen = () => {
           onPress={() => {
             navigate('Map')
           }} />
+          <Button
+          title='Sign In'
+          containerStyle={{ width: '100%', paddingHorizontal: 40 }}
+          onPress={() => {
+            navigate('UserSignIn')
+          }} />
       </View>
     </View>
   );
-}
+};
